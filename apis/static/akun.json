@@ -1,0 +1,23 @@
+{
+    "data": 
+    [
+        {
+            "id": 1,
+            "username": "qwerty",
+            "password": "98765",
+            "isActive": true
+        },
+        {
+            "id": 2,
+            "username": "tyuiop",
+            "password": "98765",
+            "isActive": true
+        },
+        {
+            "id": 3,
+            "username": "cvbnm",
+            "password": "98765",
+            "isActive": true
+        }
+    ]
+}

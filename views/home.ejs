@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Chapter 3 - Kuni</title>
+    <!--css bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--css custom-->
+    <style>
+        /*baru bisa segini kak maap kak, otak atik lama2 pusing hehe, terima kasih untuk ilmu nya kak*/
+  html{
+      background-color: black;
+      width: 100%;
+      overflow-y: visible;
+      overflow-x: hidden;
+      user-select: none;
+      margin: 0;
+      padding: 0;
+  }
+/*responsive bootstrap*/
+@media (max-width: 575.98px) {}
+
+@media (max-width: 767.98px) {
+  .hal-1, .hal-2, .hal-3, .hal-4, .hal-5{
+    background-image: none;
+  }
+}
+
+@media (max-width: 991.98px) {}
+
+@media (max-width: 1199.98px) {}
+
+
+  h2{
+    width: 100%;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'Bebas Neue', Helvetica, sans-serif;
+    letter-spacing: 0.1rem;
+    flex: 1;
+    color:white;
+  }
+  h3{
+    width: 100%;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'Bebas Neue', Helvetica, sans-serif;
+    letter-spacing: 0.1rem;
+    flex: 1;
+    color:orange;
+  }
+  h4{
+    width: 100%;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'Bebas Neue', Helvetica, sans-serif;
+    letter-spacing: 0.1rem;
+    line-height: 2rem;
+    flex: 1;
+    color:white;
+  }
+  p{
+    width: 100%;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'Bebas Neue', Helvetica, sans-serif;
+    letter-spacing: 0.1rem;
+    line-height: 2rem;
+    flex: 1;
+    color: white;
+  }
+/*halaman 1*/
+
+/*background hal 1*/
+  .hal-1{
+    width: 100%;
+    height: 150vh;
+    background-image: url("./assets/(1)main-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+/*menu hal 1*/
+  .menu-konten{
+    font-family: arial;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row; 
+    position: relative;
+  }
+  
+  .menu-kiri{
+    font-size: 1.5rem;
+    width:10%;
+  }
+
+  .menu-tengah{
+    font-size: 0.7rem;
+    width:60%;
+  }
+  .menu-kanan{
+    font-size: 0.7rem;
+    width:30%;
+  }
+  /*pseudo elemen untuk background menu*/
+  .bg-menu{
+    background-color: black;
+    opacity:0.5;
+    width: 100%;
+    height: 100px;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    position:absolute
+  }
+ 
+ul{
+  display: inline;
+  color: white
+}
+/*konten hal 1*/
+.teks-hal-1-tengah{
+  width: 100%;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+}
+  .play {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 15%;
+    font-size: 4rem;
+    font-style: normal;
+    line-height: 5rem;
+    letter-spacing: 0.3rem;
+    margin-bottom: 3.5625rem;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+  .play-caption {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'Bebas Neue', Helvetica, sans-serif;
+    letter-spacing: 0.1rem;
+    line-height: 2rem;
+    flex: 1;
+    margin-bottom: 3.5625rem;
+    text-align: center;
+    color: white;
+}
+
+#button-hal-1{
+  font-weight: bold;
+  width:200px;
+  height:50px;
+  text-align: center;
+  align-items: center;
+}
+
+.tombol{
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+.teks-hal-1-bawah{
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20%;
+}
+
+/*halaman 2*/
+
+/*background hal 2*/
+.hal-2{
+  width: 100%;
+  height: 150vh;
+  background-image: url("./assets/(2)the-games-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
+}
+.konten-hal-2{
+  padding-top: 100px;
+  margin-left: 5%;
+  vertical-align:50%;
+  width: 80%;
+  height: 100%;
+  overflow: auto;
+  align-items: center;
+}
+.gallery-hal-2{
+  float:right
+}
+.teks-hal-2-kiri{
+  margin-top: 20%;
+}
+
+/*halaman 3*/
+/*background hal 3*/
+.hal-3{
+  width: 100%;
+  height: 110vh;
+  background-image: url("./assets/(3)features.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
+}
+.konten-hal-3{
+  width: 100%;
+  height: 100%;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+.hal-3-space{
+  width:55%;
+}
+.teks-hal-3{
+  width:45%;
+}
+/*halaman 4*/
+.hal-4{
+  width: 100%;
+  height: 150vh;
+  background-image: url("./assets/(4)requirements.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
+}
+.hal-4-atas{
+  text-align: center;
+  padding-top: 15%;
+}
+.konten-hal-4{
+  height: 90%;
+  display: flex;
+}
+.space-hal-4-kiri{
+  width:7%;
+  height: 10%;
+}
+
+.space-hal-4-kanan{
+  width: 50%;
+}
+.sys-hal-4{
+  width: 80%;
+  height: 20%;
+  vertical-align: middle;
+  margin-top: 20%;
+}
+table{
+  border-collapse: collapse;
+}
+td{
+  border: 1px solid gray;
+}
+
+/*halaman 5*/
+.hal-5{
+  width: 100%;
+  height: 150vh;
+  background-color: black;
+  background-image: url("./assets/(5)top-score-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
+}
+
+.konten-hal-5{
+  display: flex;
+  width: 100%;
+  height: 90%;
+  padding-top: 10%;
+  flex-direction: row;
+}
+.teks-hal-5-kiri{
+  flex-direction: row;
+  width: 30%;
+  padding-left: 5%;
+  padding-top: 10%;
+}
+#button-hal-5{
+  font-weight: bold;
+  width:200px;
+  height:50px;
+}
+.hal-5-kanan{
+  width: 70%;
+}
+    </style>
+</head>
+
+
+<body class="fullscreen">
+    <!--halaman 1-->
+    <section class="hal-1">
+        <div class="menu">
+            <div class="bg-menu"></div>
+            <div class="menu-konten">
+                <div class="menu-kiri">
+                    <span><ul>LOGO</ul></span>
+                </div>
+                <div class="menu-tengah">
+                  <a href ="/">
+                    <span><ul>HOME</ul></span>
+                  </a>
+                    <span><ul>WORK</ul></span>
+                    <span><ul>CONTACT</ul></span>
+                    <span><ul>ABOUT US</ul></span>
+                </div>
+                <div class="menu-kanan">
+                  <a href="/signup">
+                    <span><ul>SIGN UP</ul></span>
+                  </a>
+                  <a href="/login">
+                    <span><ul>LOG IN</ul></span>
+                  </a>                     
+                </div>
+                
+            </div> 
+        </div>
+        <div class="teks-hal-1-tengah">
+            <h1 class="play">PLAY TRADITIONAL GAME</h1>
+            <h3 class="play-caption">Experience new traditional game play</h3>
+            <div class="tombol">
+                <a href="/gamesuit">
+                    <button type="button" class="btn btn-warning" id="button-hal-1">PLAY NOW</button>
+                </a>
+            </div>
+            <div class="teks-hal-1-bawah">
+                <p>THE STORY</p>
+                <p class="panah-bawah">v</p>
+            </div>
+        </div>
+    </section>
+<!--halaman 2-->
+    <section class="hal-2">
+        <main class="konten-hal-2">
+            <div class="teks-hal-2-kiri">
+                <p>What's so special?</p>
+                <h2>THE GAMES</h2>
+            </div>         
+            <div class="gallery-hal-2">
+                <img src="./assets/(2)rockpaperstrategy-1600.jpg" width="600 px">
+            </div>
+        </main>
+    </section>
+<!--halaman 3-->
+    <section class="hal-3">
+        <div class="konten-hal-3">
+            <div class="hal-3-space"></div>
+            <div class="teks-hal-3">
+                <p>What's so special?</p>
+                <h2>FEATURES</h2>
+                <h3><li>TRADITIONAL GAMES</li></h3>
+                <h4>If you miss your childhood we provide many traditional games here</h4>
+                <h3><li>GAME SUIT</li></h3>
+                <h3><li>TBD</li></h3>
+            </div>
+        </div>
+    </section>
+<!--halaman 4-->
+    <section class="hal-4">
+        <div class="hal-4-atas">
+            <p>Can My Computer Run this game?</p>
+        </div>
+        <div class="konten-hal-4">
+            <div class="space-hal-4-kiri"></div>
+            <div class="teks-hal-4">
+                <div class="sys-hal-4">
+                    <h2>SYSTEM REQUIREMENTS</h2>
+                </div>
+                <!--Table-->
+                <table class="tabel-hal-4">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h3 class="requirements-info">OS:</h3>
+                                <h4 class="requirements-info-content">
+                                    Windows 7 64-bit only (No OSX support at this time)
+                                </h4>
+                            </td>
+                            <td>
+                                <h3 class="processor">PROCESSOR:</h3>
+                                <h4 class="processor-content">
+                                    Intel Core 2 Duo @2.4GhZ or AMD Athlon X2 @ 2.8 GHZ
+                                </h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3 class="memory">MEMORY:</h3>
+                                <h4 class="memory-content">
+                                    4 GB RAM
+                                </h4>
+                            </td>
+                            <td>
+                                <h3 class="storage">STORAGE:</h3>
+                                <h4 class="storage-content">
+                                    8 GB available space
+                                </h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <h3 class="graphics">GRAPHICS:</h3>
+                                <h4 class="graphics-content">
+                                    NVIDIA GeForce GTX 660 2GB or
+                                    AMD Radeon HD 7850 2GB DirectX11 (Shader Model 5)
+                                </h4>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="space-hal-4-kanan"></div>
+        </div>
+        
+    </section> 
+    <!--halaman 5-->
+    <section class="hal-5">
+        <div class="konten-hal-5">
+            <aside class="teks-hal-5-kiri">
+                <h2>TOP SCORES</h2>
+                <p>This top score from various games provided on this platform</p>
+                <button type="button" class="btn btn-warning" id="button-hal-5">see more</button>
+            </aside>
+            <div class="hal-5-kanan">
+                <div class="container row">
+                    <!-- maaf kak bagian saya ini copas dari referensi web binar project yang FSW dan saya adjust -->
+                    <div class="col">
+                      <div class="row">
+                        <div class="col-lg-5 col-md-7 offset-lg-6 offset-md-2 offset-sm-1 twittercards">
+                          <div class="card text-white bg-dark mb-2 " id="card-1">
+                            <div class="card-header row">
+                              <svg width="30" height="30" class="img-fluid float-left profilepic col-3 card-costum" alt="Evan Lahti">
+                                  <circle cx="29" cy="40" r="25" fill="gray"></circle>
+                              </svg>
+                              <div class="col-6">
+                                <h3>Evan Lahti</h3>
+                                <h4>PC Gamer</h4>
+                              </div>
+                              <img src="./assets/twitter.svg" class="img-fluid float-right col-2 " alt="twitter">
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">
+                                "One of my gaming highlights of the year."
+                              </h5>
+                              <p class="card-text">June 18, 2021</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              
+                      <div class="row">
+                        <div class="col-lg-5 col-md-7 offset-lg-3 offset-md-2 offset-sm-1 twittercards">
+                          <div class="card text-white bg-dark mb-2 " id="card-2">
+                            <div class="card-header row">
+                                <svg width="30" height="30" class="img-fluid float-left profilepic col-3 card-costum" alt="Evan Lahti">
+                                    <circle cx="29" cy="40" r="25" fill="gray"></circle>
+                                </svg>
+                              <div class="col-6">
+                                <h3>Jada Griffin</h3>
+                                <h4>Nerdreactor</h4>
+                              </div>
+                              <img src="./assets/twitter.svg" class="img-fluid float-right col-2 " alt="twitter">
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">
+                                "The next big thing in the world of streaming and survival
+                                games."
+                              </h5>
+                              <p class="card-text">July 10, 2021</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              
+                      <div class="row">
+                        <div class="col-lg-5 col-md-7 offset-lg-5 offset-md-2 offset-sm-1 twittercards">
+                          <div class="card text-white bg-dark mb-1 " id="card-3">
+                            <div class="card-header row">
+                                <svg width="30" height="30" class="img-fluid float-left profilepic col-3 card-costum" alt="Evan Lahti">
+                                    <circle cx="29" cy="40" r="25" fill="gray"></circle>
+                                </svg>
+                              <div class="col-6">
+                                <h3>Aaron Williams</h3>
+                                <h4>Uproxx</h4>
+                              </div>
+                              <img src="./assets/twitter.svg" class="img-fluid float-right col-2 " alt="twitter">
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">
+                                "Snoop Dogg Playing The Wildly Entertaining 'SOS' Is
+                                Ridiculous
+                              </h5>
+                              <p class="card-text">December 24, 2018</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End of Twitter cards -->
+                  </div>
+            </div>       
+        </div>
+        
+    </section>
+</body>
+
+
+
+</html>

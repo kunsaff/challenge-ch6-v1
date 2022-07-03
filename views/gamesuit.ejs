@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Chapter 3 (Game Suit-js) - Kuni</title>
+    <!--css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        html,body {
+            background-color:#9C835F;
+            }
+
+            body{
+            height: 100vh;
+            width: 100%;
+            }
+
+            header{
+                display: flex;
+                align-items: center;
+                margin-left: 30px;
+                border: solid red 1 px;
+                height: 15%;
+            }
+
+            .teks-menu{
+                font-size: 20px;
+                color: orange;
+                font-weight: bold;
+            }
+
+            .simbol-menu{
+                color:brown;
+            }
+
+            .opsi-player{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button-player, .button-comp{
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+            }
+
+            .opsi-comp{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .game{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                text-align: center;
+            }
+
+            #vs-tengah{
+                align-items: center;
+                width: 20%;
+                text-align: center;
+                color: white;
+            }
+
+            .teks-vs{
+                font-size: 70px;
+            }
+
+            .player-kiri, .komputer-kanan{
+                width: 40%;
+                text-align: center;
+            }
+
+            button{
+                background: transparent;
+                border: none;
+            }
+
+            .refresh{
+                width: 100%;
+            }
+
+            .refresh-bawah{
+                margin-top: 10px;
+                width: 100%;
+                height: 15%;
+                align-items: center;
+            }
+
+            /*---------------dengan JS-----------*/
+            .chosen {
+                background-color: #C4C4C4;
+                border-radius: 30px;
+            }
+
+            .winBox {
+                height: 100px;
+                display: grid;
+                place-items: center;
+                background: #4C9654;
+                border-radius: 10px;
+                margin:  15px auto;
+                padding: 15px;
+                
+            }
+
+            .drawBox {
+                height: 100px;
+                display: grid;
+                place-items: center;
+                border-radius: 10px;
+                margin:  15px auto;
+                padding: 15px;
+                background: #035B0C;
+                border-radius: 10px;
+                
+            }
+    </style>
+</head>
+
+<body>
+    <!--menu atas-->
+    <header>
+        <div class="back">
+            <h1 class="simbol-menu">
+                <a href="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="brown" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                      </svg>
+                </a>
+            </h1>
+        </div>
+        <div class="logo">
+            <img src="./assets/logo.png" alt="logo">
+        </div>
+        <div class="judul">
+            <h1 class="teks-menu">
+                ROCK PAPER SCISSORS
+            </h1>
+        </div>
+    </header>
+    <!--Game-->
+    <section>
+        <div class="game">
+            <!--player-->
+            <div class="player-kiri">
+                <h1 class="player">PLAYER 1</h1>
+                <div class="opsi-player">
+                    <div class="button-player">
+                        <button id="batu-player" onclick="suit(this, 0)">
+                            <img src="./assets/batu.png" alt="batu" width="100px" alt="Batu">
+                        </button>
+                        <button id="gunting-player" onclick="suit(this, 1)">
+                            <img src="./assets/gunting.png" alt="gunting" width="100px" alt="Gunting">
+                        </button>
+                        <button id="kertas-player" onclick="suit(this, 2)">
+                            <img src="./assets/kertas.png" alt="kertas" width="100px" alt="Kertas">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--vs tengah-->
+            <div id="vs-tengah">
+                <h1 class="teks-vs" id="vs">VS</h1>
+            </div>
+
+            <!--komputer-->
+            <div class="komputer-kanan">
+                <h1 class="nama-komputer">COMP</h1>
+                <div class="opsi-comp">
+                    <div class="button-comp">
+                        <button>
+                            <img src="./assets/batu.png" alt="batu" width="100px" alt="Batu">
+                        </button>
+                        <button>
+                            <img src="./assets/gunting.png" alt="gunting" width="100px" alt="Gunting">
+                        </button>
+                        <button>
+                            <img src="./assets/kertas.png" alt="kertas" width="100px" alt="Kertas">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--refresh-->
+        <div class="refresh-bawah">
+            <button class="refresh">
+                <a href="/gamesuit">
+                    <img src="./assets/refresh.png" alt="refresh" width="100px">
+                </a>
+            </button>
+        </div>
+    </section>
+
+    <!--JS-->
+    <script>
+        //1. deklarasi rules dasar
+        isChoice = false;
+        var com = (null);
+        var hasil = (null);
+        var choices = (null);
+
+        //2. fungsi untuk pilihan player
+        function suit (el, choices){
+            if(isChoice) return;
+            
+            choices =  choices;
+            isChoice = true;
+            
+        //3. yang terjadi kalau playerChoices di klik (backgroundcolor berubah)
+
+            el.style.backgroundColor = "#C4C4C4";
+            console.log("pilihan player", choices);
+        //4. deklarasi variabel untuk pilihan komputer di dalam scope fungsi pilihan player
+            var com = comChoice ();
+            const vs = document.querySelector("#vs-tengah");
+
+        //6. result berubah tampilannya di tengah (menggantikan 'vs')
+            if( choices - com == 0) {
+                hasil = 'Draw', document.getElementById("vs").innerHTML='DRAW', vs.style.backgroundColor = "#035B0C" 
+            } else if (choices - com == -1 || choices - com == 2 ) {
+                hasil = 'Player Menang', 
+                document.getElementById("vs").innerHTML=
+                `PLAYER 1
+                WIN`, 
+                vs.style.backgroundColor = "#4C9654"
+            } else if (choices - com == 1 || choices - com == -2) {
+                hasil = 'Player Kalah', 
+                document.getElementById("vs").innerHTML=
+                `COM 
+                WIN`, vs.style.backgroundColor = "#4C9654"
+            }
+            console.log(hasil);
+        };
+
+        //5. fungsi untuk pilihan komputer
+        function comChoice(){{
+            var com = Math.random()
+
+            if( com < 0.34) {
+                com = 0 
+            } else if (com >= 0.34 && com < 0.67) {
+                com = 1
+            } else {
+                com = 2
+            };
+
+            comChoice = com;
+            const el = document.querySelectorAll("div.button-comp > button")
+            el[com].style.backgroundColor ="#C4C4C4";
+            console.log("pilihan computer", com);
+            return com;
+            }
+        }
+    </script>
+</body>
+</html>
