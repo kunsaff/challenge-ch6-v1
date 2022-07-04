@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      //this.hasOne(models.user_game_biodata, {foreignKey:"user_id"})
     }
   }
   user_game_biodata.init({
